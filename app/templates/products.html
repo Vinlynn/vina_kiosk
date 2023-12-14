@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<h1>Product Page<h1>{% endblock %}
+{% block content %}
+<!-- Your homepage content goes here -->
+<h1>Products</h1>
+
+<div class="row">
+    {% for product in products %} 
+    <div class="col-4">
+        <div class="card">
+            <img src="{{ url_for('static', filename= product[4]) }}" class="card-img-top img-fluid">
+            <div class="card-body">
+                <h5 class="card-title">{{ product[1] }}</h5>
+                <p class="card-text">{{ product[2] }}</p>
+                <!-- Additional product details here -->
+            </div>
+    </div>
+</div>
+{% endfor %}
+
+<!-- Here you can add more HTML ele
+ments such as cards, buttons, etc. -->
+{% endblock %}
